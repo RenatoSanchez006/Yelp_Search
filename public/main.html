@@ -16,13 +16,14 @@
     ></script>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-primary justify-content-center">
-      <a class="navbar-brand mb-0 h1" href="#">Yelp Searcher</a>
-      <!-- <span class="navbar-brand mb-0 h1">Yelp Searcher</span> -->
+    <nav class="navbar navbar-dark bg-primary justify-content-center sticky-top">
+      <a class="navbar-brand mb-0 h1" href="./main.html">Yelp Searcher</a>
     </nav>
     <div class="container-fluid">
-      <!-- <h1>h1. Bootstrap heading</h1> -->
-      <form class="needs-validation my-3" novalidate>
+      <div class="container-fluid pt-3">
+        <h5 class="text-dark">Search for the best food places in town</h5>
+      </div>
+      <form class="needs-validation m-3" novalidate>
         <div class="form-row">
           <div class="col-md-6 mb-3">
             <label for="cityLocation">City/Location</label>
@@ -33,31 +34,29 @@
             <input type="text" class="form-control" id="foodType" placeholder="Desserts, Mexican, Coffee" required>
           </div>
           <div class="col-md-1 mb-3 align-self-end">
-            <button class="btn btn-primary w-100" type="submit">Submit</button>
+            <button class="btn btn-primary btn-block" type="submit">Search</button>
           </div>
         </div>
       </form>
     </div>
-    <!-- <div class="container-fluid">
-      <h1>h1. Bootstrap heading</h1>
-    </div> -->
-    <div class="d-flex container-fluid bg-success vh-100">
-      <div class="row flex-grow-1">
-        <div class="col-md-9 bg-danger m-2 ">
+    <div class="container-fluid" style="height: 600px;">
+      <div class="row h-100">
+        <div class="col-lg-9 h-100 ml-lg-3 py-1">
           <div class="h-100" id="map"></div>
         </div>
-        <div class="col-md bg-primary m-1">
+        <div class="col-lg mr-lg-3 py-1">
+          <h5 class="text-dark">History:</h5>
           <ul class="list-group">
             <li class="list-group-item">Cras justo odio</li>
             <li class="list-group-item">Dapibus ac facilisis in</li>
             <li class="list-group-item">Morbi leo risus</li>
             <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <!-- <li class="list-group-item">Vestibulum at eros</li>
             <li class="list-group-item">Cras justo odio</li>
             <li class="list-group-item">Dapibus ac facilisis in</li>
             <li class="list-group-item">Morbi leo risus</li>
             <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Vestibulum at eros</li> -->
           </ul>
         </div>
       </div>
