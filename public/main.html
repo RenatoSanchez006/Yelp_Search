@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Page Title</title>
+    <title>Yelp Searcher</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link
       rel="stylesheet"
@@ -16,6 +16,7 @@
     ></script>
   </head>
   <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-dark bg-primary justify-content-center sticky-top">
       <a class="navbar-brand mb-0 h1" href="./main.html">Yelp Searcher</a>
     </nav>
@@ -23,29 +24,31 @@
       <div class="container-fluid pt-3">
         <h5 class="text-dark">Search for the best food places in town</h5>
       </div>
-      <form class="needs-validation m-3" novalidate>
+      <!-- Main Form -->
+      <form class="m-3">
         <div class="form-row">
-          <div class="col-md-6 mb-3">
+          <div class="col-lg-6 mb-3">
             <label for="cityLocation">City/Location</label>
-            <input type="text" class="form-control" id="cityLocation" placeholder="Boston, New York, Los Angeles" required>
+            <input type="text" class="form-control" id="cityLocation" placeholder="Boston" value="Boston" required>
           </div>
-          <div class="col-md-5 mb-3">
-            <label for="foodType">Type of Food</label>
-            <input type="text" class="form-control" id="foodType" placeholder="Desserts, Mexican, Coffee" required>
+          <div class="col-lg-5 mb-3">
+            <label for="foodType">Type(s) of Food</label>
+            <input type="text" class="form-control" id="foodType" placeholder="Desserts, Mexican, Coffee" value="Mexican" required>
           </div>
-          <div class="col-md-1 mb-3 align-self-end">
-            <button class="btn btn-primary btn-block" type="submit">Search</button>
+          <div class="col-lg-1 mb-3 align-self-end">
+            <button class="btn btn-primary btn-block" id="btnSearch" type="submit">Search</button>
           </div>
         </div>
       </form>
     </div>
+    <!-- Map and city history -->
     <div class="container-fluid" style="height: 600px;">
       <div class="row h-100">
         <div class="col-lg-9 h-100 ml-lg-3 py-1">
           <div class="h-100" id="map"></div>
         </div>
         <div class="col-lg mr-lg-3 py-1">
-          <h5 class="text-dark">History:</h5>
+          <h5 class="text-dark">City History:</h5>
           <ul class="list-group">
             <li class="list-group-item">Cras justo odio</li>
             <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -62,8 +65,8 @@
       </div>
     </div>
     <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQS3PcKtRGd0EkoZ4Rv6XjAIvD4rzJHQs&callback=initMap&v=weekly"
-    async
+      async defer
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDQS3PcKtRGd0EkoZ4Rv6XjAIvD4rzJHQs&callback=initMap&v=weekly"
     ></script>
     <script type="text/JavaScript" src="./js/main.js"></script>
   </body>
