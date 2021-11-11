@@ -4,6 +4,18 @@ $(function () {
 
 let map;
 let markers = [];
+let history = $('#listHistory').children().length;
+
+function updateHistory(city, food) {
+  if (history < 10) {
+    history++;
+  } else {
+    $("#listHistory").children().last().remove();
+  }
+  $("#listHistory").prepend(`
+    <li class="list-group-item">${city} - ${food}</li>
+  `);
+}
 
 function initMap() {
   let coords = { lat: 42.36, lng: -71.0589 }; //Boston coordinates
@@ -59,6 +71,7 @@ function searchPlaces(city, food) {
     })
     .then((data) => {
       placeMarkers(data);
+      updateHistory(city, food);
     })
     .catch((err) => {
       console.log(err);
