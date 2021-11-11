@@ -15,9 +15,6 @@ app.get("/", (req, res) => {
 
 app.get("/yelp/:city/:food", (req, res) => {
   console.log("/yelp", req.params.city, req.params.food);
-  console.log(
-    `${YELP_URL}&location=${req.params.city}&categories=${req.params.food}`
-  );
   let config = {
     method: "GET",
     url: `${YELP_URL}&location=${req.params.city}&categories=${req.params.food}`,
