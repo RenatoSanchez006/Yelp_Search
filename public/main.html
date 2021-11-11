@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yelp Searcher</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-primary justify-content-center sticky-top">
+      <a class="navbar-brand mb-0 h1" href="./main.html">Yelp Searcher</a>
+    </nav>
+    <div class="container-fluid">
+      <div class="container-fluid pt-3">
+        <h5 class="text-dark">Search for the best food places in town</h5>
+      </div>
+      <!-- Main Form -->
+      <form class="m-3">
+        <div class="form-row">
+          <div class="col-lg-6 mb-3">
+            <label for="cityLocation">City/Location</label>
+            <input type="text" class="form-control" id="cityLocation" placeholder="Boston" value="Boston" required>
+          </div>
+          <div class="col-lg-5 mb-3">
+            <label for="foodType">Type of Food</label>
+            <input type="text" class="form-control" id="foodType" placeholder="Coffee" value="Mexican" required>
+          </div>
+          <div class="col-lg-1 mb-3 align-self-end">
+            <button class="btn btn-primary btn-block" id="btnSearch" type="submit">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Map and city history -->
+    <div class="container-fluid" style="height: 600px;">
+      <div class="row h-100">
+        <div class="col-lg-9 h-100 ml-lg-3 py-1">
+          <div class="h-100" id="map"></div>
+        </div>
+        <div class="col-lg mr-lg-3 py-1">
+          <h5 class="text-dark">City History:</h5>
+          <ul class="list-group" id="listHistory">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script
+      async defer
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDQS3PcKtRGd0EkoZ4Rv6XjAIvD4rzJHQs&callback=initMap&v=weekly"
+    ></script>
+    <script type="text/JavaScript" src="./js/main.js"></script>
+  </body>
+</html>
